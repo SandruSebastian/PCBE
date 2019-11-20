@@ -1,4 +1,5 @@
-import stock.core.StockMarketSingleton;
+import stock.core.market.StockMarket;
+import stock.core.market.StockMarketSingleton;
 import stock.exceptions.StockMarketAlreadyRunningException;
 import stock.models.Buyer;
 import stock.models.Demand;
@@ -41,18 +42,22 @@ import java.util.Random;
  * Preventive synchronized locks are created in the StockMarketSingleton class (HISTORY_LOCK, SUPPLY_LOCK, DEMAND_LOCK)
  * to ensure thread safe execution.
  * If the buyer doesn't find a supply over 2000 iterations, his thread will be stopped.
+ * <br>- version 0.0.4 : Added a fixed size thread pool implementation that is used to schedule matching tasks for newly placed demands.
+ * Also added {@link StockMarket} and {@link stock.core.pool.ThreadPool} interfaces as a base guideline for other possible implementations
+ * that might arise. Previous implementation of the StockMarket was renamed {@link stock.core.market.BasicStockMarket}
+ * and {@link stock.core.market.BasicStockMarketBuilder} was introduces to facilitate the setup of the StockMarket before being used<br>
  *
  * @author Sebastian Sandru, Daniel Incicau, Stefan Oproiu, Paul Iusztin
- * @version 0.0.3
+ * @version 0.0.4
  * @since 11.19.2019
  */
 
 public final class App {
     public static void main(String[] args) {
-        StockMarketSingleton stockMarketSingleton = StockMarketSingleton.getInstance();
+        StockMarket stockMarket = StockMarketSingleton.getInstance();
         try {
-            stockMarketSingleton.run().setEnabledLogger(true);
-            bootstrapApp(1000, 1000, stockMarketSingleton);
+            stockMarket.run();
+            bootstrapApp(2000, 2000, stockMarket);
         } catch (StockMarketAlreadyRunningException e) {
             e.printStackTrace();
         }
@@ -68,7 +73,7 @@ public final class App {
      * @param buyersNumber  int
      * @param stockMarket   StockMarketSingleton
      */
-    private static void bootstrapApp(int sellersNumber, int buyersNumber, final StockMarketSingleton stockMarket) {
+    private static void bootstrapApp(int sellersNumber, int buyersNumber, final StockMarket stockMarket) {
         final Random rnd = new Random();
 
         List<Seller> sellers = new ArrayList<Seller>();
@@ -83,12 +88,10 @@ public final class App {
         }
 
         for (final Seller s : sellers) {
-
             s.createSupply(rnd.nextInt(2) + 1, rnd.nextInt(4) + 1);
         }
 
         for (final Buyer b : buyers) {
-
             b.addDemand(new Demand(rnd.nextInt(2) + 1, rnd.nextInt(4) + 1, b));
         }
 

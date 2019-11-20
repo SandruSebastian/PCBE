@@ -1,14 +1,12 @@
 package stock.models;
 
-import stock.core.StockMarketSingleton;
-
-import java.util.List;
+import stock.core.market.StockMarket;
 
 /**
  * Buyer Class
  *
  * @author Sebastian Sandru, Daniel Incicau, Stefan Oproiu, Paul Iusztin
- * @version 0.0.3
+ * @version 0.0.4
  * @since 11.19.2019
  */
 
@@ -18,7 +16,7 @@ public class Buyer extends StockPerson {
      * @param instanceIdentifier not unique
      * @param stockMarket        the given StockMarket
      */
-    public Buyer(String instanceIdentifier, StockMarketSingleton stockMarket) {
+    public Buyer(String instanceIdentifier, StockMarket stockMarket) {
         super(instanceIdentifier, stockMarket);
     }
 
@@ -43,35 +41,10 @@ public class Buyer extends StockPerson {
         final Buyer self = this;
         new Thread(new Runnable() {
             public void run() {
-                int timesTriedToBuy = 0;
-
                 synchronized (self.stockMarket) {
                     self.stockMarket.addDemand(demand);
                 }
-
-                for (; ; ) {
-                    synchronized (self.stockMarket) {
-                        List<Supply> supplies = self.stockMarket.getSupplies();
-                        for (int i = 0; i < supplies.size() && supplies.get(i) != null; i++) {
-                            Supply supply = supplies.get(i);
-                            self.stockMarket.tryToBuy(demand, supply);
-
-                            if (supply.getCount() == 0) {
-                                self.stockMarket.removeSupply(supply);
-                            }
-
-                            if (demand.getCount() == 0) {
-                                self.stockMarket.removeDemand(demand);
-                                Thread.currentThread().interrupt();
-                                return;
-                            }
-                        }
-                    }
-                    if (timesTriedToBuy++ == 2000) {
-                        Thread.currentThread().interrupt();
-                        return;
-                    }
-                }
+                Thread.currentThread().interrupt();
             }
         }).start();
     }

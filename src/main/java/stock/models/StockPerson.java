@@ -1,7 +1,7 @@
 package stock.models;
 
 import com.google.common.hash.Hashing;
-import stock.core.StockMarketSingleton;
+import stock.core.market.StockMarket;
 
 import java.nio.charset.Charset;
 import java.sql.Timestamp;
@@ -10,12 +10,12 @@ import java.sql.Timestamp;
  * Abstract StockPerson Class Seller, Buyer
  *
  * @author Sebastian Sandru, Daniel Incicau, Stefan Oproiu, Paul Iusztin
- * @version 0.0.3
+ * @version 0.0.4
  * @since 11.19.2019
  */
 
 public abstract class StockPerson {
-    final StockMarketSingleton stockMarket;
+    final StockMarket stockMarket;
     private String identifier;
     private String name;
 
@@ -23,7 +23,7 @@ public abstract class StockPerson {
      * @param instanceIdentifier not unique
      * @param stockMarket        StockMarketSingleton
      */
-    StockPerson(String instanceIdentifier, StockMarketSingleton stockMarket) {
+    StockPerson(String instanceIdentifier, StockMarket stockMarket) {
         this.identifier = Hashing.sha256()
                 .hashString(instanceIdentifier + new Timestamp(System.currentTimeMillis()).getTime(), Charset.forName("UTF-8"))
                 .toString();

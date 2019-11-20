@@ -1,6 +1,7 @@
-package stock.core;
+package stock.core.market;
 
 import com.sun.istack.internal.NotNull;
+import stock.core.pool.ThreadPool;
 import stock.exceptions.StockMarketAlreadyRunningException;
 import stock.models.Demand;
 import stock.models.Supply;
@@ -10,56 +11,41 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Core Singleton Class. The application functionality is based on this.
+ * Basic {@link StockMarket} implementation
  * This class will have a record of all the demands and supplies that are
  * being entered by the Buyers/Sellers
  *
  * @author Sebastian Sandru, Daniel Incicau, Stefan Oproiu, Paul Iusztin
- * @version 0.0.3
+ * @version 0.0.4
  * @since 11.19.2019
  */
-public class StockMarketSingleton {
+public class BasicStockMarket implements StockMarket {
 
-    private final static StockMarketSingleton ourInstance = new StockMarketSingleton();
-    private static boolean isRunning = false;
     private final Object SUPPLY_LOCK = new Object();
     private final Object HISTORY_LOCK = new Object();
     private final Object DEMAND_LOCK = new Object();
+
     /**
      * List of strings to see all the actions that took place in the runtime
      */
     private List<String> history = new ArrayList<String>();
     private List<Supply> supplies = new ArrayList<Supply>();
     private List<Demand> demands = new ArrayList<Demand>();
+
+    /**
+     * Flag that starts the matching of new demands with existing supplies
+     */
+    private boolean isRunning = false;
+
     /**
      * Enables runtime logger
      */
     private boolean enabledLogger = false;
 
-
-    private StockMarketSingleton() {
-    }
-
     /**
-     * @return StockMarketSingleton instance
+     * Thread pool used to schedule tasks on the stock market
      */
-    public static StockMarketSingleton getInstance() {
-        return ourInstance;
-    }
-
-    /**
-     * Simulates the running server func
-     *
-     * @return StockMarketSingleton instance
-     * @throws StockMarketAlreadyRunningException threw If it's already running
-     */
-    public StockMarketSingleton run() throws StockMarketAlreadyRunningException {
-        if (isRunning) {
-            throw new StockMarketAlreadyRunningException("The StockMarket is already running");
-        }
-        isRunning = true;
-        return this;
-    }
+    private ThreadPool threadPool;
 
     /**
      * Method to enable runtime logs
@@ -68,6 +54,13 @@ public class StockMarketSingleton {
      */
     public void setEnabledLogger(boolean enabledLogger) {
         this.enabledLogger = enabledLogger;
+    }
+
+    /**
+     * @param threadPool underlying thread pool used by the stock market
+     */
+    public void setThreadPool(ThreadPool threadPool) {
+        this.threadPool = threadPool;
     }
 
     /**
@@ -88,20 +81,46 @@ public class StockMarketSingleton {
      *
      * @param demand added by the buyer
      */
-    public void addDemand(@NotNull Demand demand) {
+    public void addDemand(@NotNull final Demand demand) {
         synchronized (DEMAND_LOCK) {
             this.demands.add(demand);
         }
         this.updateHistory(demand.getOwner().getName() + " with id " + demand.getOwner().getIdentifier() + " added a demand :" + demand.toString());
 
+        this.threadPool.execute(new Runnable() {
+            public void run() {
+                matchDemandWithSupply(demand);
+            }
+        });
     }
 
+    /**
+     * Simulates the running server func
+     *
+     * @return StockMarket instance
+     * @throws StockMarketAlreadyRunningException threw If it's already running
+     */
+    public StockMarket run() throws StockMarketAlreadyRunningException {
+        if (isRunning) {
+            throw new StockMarketAlreadyRunningException("The StockMarket is already running");
+        }
+        isRunning = true;
+        return this;
+    }
 
     /**
-     * @return The supplies added at the current time
+     * Method to print every action that took place in the market
+     *
+     * @return The whole history as a String
      */
-    public List<Supply> getSupplies() {
-        return supplies;
+    public String printHistory() {
+        StringBuilder fullHistory = new StringBuilder();
+
+        for (int i = 0; i < history.size(); i++) {
+            fullHistory.append(history.get(i) + "\n");
+        }
+
+        return fullHistory.toString();
     }
 
     /**
@@ -110,7 +129,7 @@ public class StockMarketSingleton {
      * @param demand published by the buyer
      * @param supply published y the seller in the StockMarket
      */
-    public void tryToBuy(@NotNull Demand demand, @NotNull Supply supply) {
+    private void tryToBuy(@NotNull Demand demand, @NotNull Supply supply) {
         if (demand.getPrice() != supply.getPrice() || supply.getCount() == 0 || demand.getCount() == 0) {
             return;
         }
@@ -128,7 +147,7 @@ public class StockMarketSingleton {
 
         }
 
-        this.updateHistory(demand.getOwner().getName() + " with the demand " + demand.toString() + " matched " + supply.toString());
+        this.updateHistory("[" + Thread.currentThread() + "]:" + demand.getOwner().getName() + " with the demand " + demand.toString() + " matched " + supply.toString());
 
 
     }
@@ -138,12 +157,12 @@ public class StockMarketSingleton {
      *
      * @param demand published by the buyer
      */
-    public void removeDemand(@NotNull Demand demand) {
+    private void removeDemand(@NotNull Demand demand) {
         synchronized (DEMAND_LOCK) {
             this.demands.remove(demand);
 
         }
-        this.updateHistory(demand.toString() + " demand has ben consumed");
+        this.updateHistory("[" + Thread.currentThread() + "]:" + demand.toString() + " demand has ben consumed");
 
     }
 
@@ -165,26 +184,38 @@ public class StockMarketSingleton {
      *
      * @param supply published by the seller, deleted by the buyer
      */
-    public void removeSupply(@NotNull Supply supply) {
+    private void removeSupply(@NotNull Supply supply) {
         synchronized (SUPPLY_LOCK) {
             supplies.remove(supply);
         }
-        this.updateHistory(supply.toString() + " supply has ben removed");
+        this.updateHistory("[" + Thread.currentThread() + "]:" + supply.toString() + " supply has ben removed");
 
     }
 
-    /**
-     * Method to print every action that took place in the market
-     *
-     * @return The whole history as a String
-     */
-    public String printHistory() {
-        StringBuilder fullHistory = new StringBuilder();
+    private void matchDemandWithSupply(Demand demand) {
+        int timesTriedToBuy = 0;
 
-        for (int i = 0; i < history.size(); i++) {
-            fullHistory.append(history.get(i) + "\n");
+        for (;;) {
+//            synchronized (this) {
+//
+//            }
+            for (int i = 0; i < this.supplies.size() && this.supplies.get(i) != null; i++) {
+                Supply supply = this.supplies.get(i);
+                tryToBuy(demand, supply);
+
+                if (supply.getCount() == 0) {
+                    removeSupply(supply);
+                }
+
+                if (demand.getCount() == 0) {
+                    removeDemand(demand);
+                    return;
+                }
+            }
+            if (timesTriedToBuy++ == 2000) {
+                return;
+            }
         }
-
-        return fullHistory.toString();
     }
+
 }
