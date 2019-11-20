@@ -1,10 +1,11 @@
 package stock.exceptions;
 
-/** ErrorMessage Wrapper
- * @author Sebastian Sandru, Daniel Incicau, Stefan Oproiu, Paul Iusztin
- * @since 11.19.2019
- * @version 0.0.3
+/**
+ * ErrorMessage Wrapper
  *
+ * @author Sebastian Sandru, Daniel Incicau, Stefan Oproiu, Paul Iusztin
+ * @version 0.0.3
+ * @since 11.19.2019
  */
 
 public class StockMarketAlreadyRunningException extends Exception {

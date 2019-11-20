@@ -1,15 +1,16 @@
 package stock.models;
 
-/** Abstract StockPerson Class Seller, Buyer
+/**
+ * Abstract StockPerson Class Seller, Buyer
+ *
  * @author Sebastian Sandru, Daniel Incicau, Stefan Oproiu, Paul Iusztin
- * @since 11.19.2019
  * @version 0.0.3
+ * @since 11.19.2019
  */
 
 public class Supply extends StockObject {
 
     /**
-     *
      * @param price double
      * @param count int
      * @param owner Seller
@@ -20,7 +21,6 @@ public class Supply extends StockObject {
     }
 
     /**
-     *
      * @param count how much to consume
      */
     public void consume(int count) {

@@ -4,26 +4,25 @@ import stock.core.StockMarketSingleton;
 
 import java.util.List;
 
-/** Buyer Class
- * @author Sebastian Sandru, Daniel Incicau, Stefan Oproiu, Paul Iusztin
- * @since 11.19.2019
- * @version 0.0.3
+/**
+ * Buyer Class
  *
+ * @author Sebastian Sandru, Daniel Incicau, Stefan Oproiu, Paul Iusztin
+ * @version 0.0.3
+ * @since 11.19.2019
  */
 
 public class Buyer extends StockPerson {
 
     /**
-     *
      * @param instanceIdentifier not unique
-     * @param stockMarket the given StockMarket
+     * @param stockMarket        the given StockMarket
      */
     public Buyer(String instanceIdentifier, StockMarketSingleton stockMarket) {
         super(instanceIdentifier, stockMarket);
     }
 
     /**
-     *
      * @param cost future balance implementations
      */
     @Override
@@ -37,6 +36,7 @@ public class Buyer extends StockPerson {
      * reaches the 2000 the iteration, there is no supply that can match his demand
      * There is room for improvement. For a fact, is not the buyer job to remove consumed supplies or
      * demands, the StockMarket Thread should do it.
+     *
      * @param demand to be added
      */
     public void addDemand(final Demand demand) {

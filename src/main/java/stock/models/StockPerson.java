@@ -6,10 +6,12 @@ import stock.core.StockMarketSingleton;
 import java.nio.charset.Charset;
 import java.sql.Timestamp;
 
-/** Abstract StockPerson Class Seller, Buyer
+/**
+ * Abstract StockPerson Class Seller, Buyer
+ *
  * @author Sebastian Sandru, Daniel Incicau, Stefan Oproiu, Paul Iusztin
- * @since 11.19.2019
  * @version 0.0.3
+ * @since 11.19.2019
  */
 
 public abstract class StockPerson {
@@ -18,9 +20,8 @@ public abstract class StockPerson {
     private String name;
 
     /**
-     *
      * @param instanceIdentifier not unique
-     * @param stockMarket StockMarketSingleton
+     * @param stockMarket        StockMarketSingleton
      */
     StockPerson(String instanceIdentifier, StockMarketSingleton stockMarket) {
         this.identifier = Hashing.sha256()
@@ -31,7 +32,6 @@ public abstract class StockPerson {
     }
 
     /**
-     *
      * @return id {unique}
      */
     public String getIdentifier() {
@@ -39,7 +39,6 @@ public abstract class StockPerson {
     }
 
     /**
-     *
      * @return name {!unique}
      */
     public String getName() {
@@ -47,7 +46,6 @@ public abstract class StockPerson {
     }
 
     /**
-     *
      * @param cost double
      */
     abstract void notify(double cost);

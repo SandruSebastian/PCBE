@@ -9,39 +9,38 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
-/** Core Singleton Class. The application functionality is based on this.
+/**
+ * Core Singleton Class. The application functionality is based on this.
  * This class will have a record of all the demands and supplies that are
  * being entered by the Buyers/Sellers
+ *
  * @author Sebastian Sandru, Daniel Incicau, Stefan Oproiu, Paul Iusztin
- * @since 11.19.2019
  * @version 0.0.3
- *
- *
+ * @since 11.19.2019
  */
 public class StockMarketSingleton {
 
     private final static StockMarketSingleton ourInstance = new StockMarketSingleton();
-
+    private static boolean isRunning = false;
     private final Object SUPPLY_LOCK = new Object();
     private final Object HISTORY_LOCK = new Object();
     private final Object DEMAND_LOCK = new Object();
-
-    /** List of strings to see all the actions that took place in the runtime*/
+    /**
+     * List of strings to see all the actions that took place in the runtime
+     */
     private List<String> history = new ArrayList<String>();
-
     private List<Supply> supplies = new ArrayList<Supply>();
     private List<Demand> demands = new ArrayList<Demand>();
-
-     /** Enables runtime logger */
+    /**
+     * Enables runtime logger
+     */
     private boolean enabledLogger = false;
-    private static boolean isRunning = false;
 
 
     private StockMarketSingleton() {
     }
 
     /**
-     *
      * @return StockMarketSingleton instance
      */
     public static StockMarketSingleton getInstance() {
@@ -50,6 +49,7 @@ public class StockMarketSingleton {
 
     /**
      * Simulates the running server func
+     *
      * @return StockMarketSingleton instance
      * @throws StockMarketAlreadyRunningException threw If it's already running
      */
@@ -63,6 +63,7 @@ public class StockMarketSingleton {
 
     /**
      * Method to enable runtime logs
+     *
      * @param enabledLogger boolean for runtime logs
      */
     public void setEnabledLogger(boolean enabledLogger) {
@@ -71,6 +72,7 @@ public class StockMarketSingleton {
 
     /**
      * Adding a new Supply in the StockMarket
+     *
      * @param supply added by the seller
      */
     public void addSupply(@NotNull Supply supply) {
@@ -83,6 +85,7 @@ public class StockMarketSingleton {
 
     /**
      * Adding a new demand in the StockMarket
+     *
      * @param demand added by the buyer
      */
     public void addDemand(@NotNull Demand demand) {
@@ -95,7 +98,6 @@ public class StockMarketSingleton {
 
 
     /**
-     *
      * @return The supplies added at the current time
      */
     public List<Supply> getSupplies() {
@@ -104,6 +106,7 @@ public class StockMarketSingleton {
 
     /**
      * Main method used by the buyer to try to buy a new Supply that matches his demand
+     *
      * @param demand published by the buyer
      * @param supply published y the seller in the StockMarket
      */
@@ -132,6 +135,7 @@ public class StockMarketSingleton {
 
     /**
      * Removing an existing demand
+     *
      * @param demand published by the buyer
      */
     public void removeDemand(@NotNull Demand demand) {
@@ -145,6 +149,7 @@ public class StockMarketSingleton {
 
     /**
      * Method to update the history
+     *
      * @param message to be updated with
      */
     private void updateHistory(String message) {
@@ -157,6 +162,7 @@ public class StockMarketSingleton {
 
     /**
      * Method to remove an actual supply from the StockMarket
+     *
      * @param supply published by the seller, deleted by the buyer
      */
     public void removeSupply(@NotNull Supply supply) {
@@ -169,6 +175,7 @@ public class StockMarketSingleton {
 
     /**
      * Method to print every action that took place in the market
+     *
      * @return The whole history as a String
      */
     public String printHistory() {
