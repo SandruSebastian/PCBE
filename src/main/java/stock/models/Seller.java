@@ -1,12 +1,12 @@
 package stock.models;
 
-import stock.core.StockMarketSingleton;
+import stock.core.market.StockMarket;
 
 /**
  * Seller Class
  *
  * @author Sebastian Sandru, Daniel Incicau, Stefan Oproiu, Paul Iusztin
- * @version 0.0.3
+ * @version 0.0.4
  * @since 11.19.2019
  */
 
@@ -16,7 +16,7 @@ public class Seller extends StockPerson {
      * @param instanceIdentifier not unique
      * @param stockMarket        the given StockMarket
      */
-    public Seller(String instanceIdentifier, StockMarketSingleton stockMarket) {
+    public Seller(String instanceIdentifier, StockMarket stockMarket) {
         super(instanceIdentifier, stockMarket);
     }
 

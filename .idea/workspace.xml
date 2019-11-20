@@ -1,122 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b58a72f-e562-41d8-8554-e2671d09b831" name="Default Changelist" comment="" />
-    <ignored path="$PROJECT_DIR$/out/" />
-    <ignored path="$PROJECT_DIR$/target/" />
+    <list default="true" id="4b58a72f-e562-41d8-8554-e2671d09b831" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/stock/core/market/BasicStockMarketBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/stock/core/market/StockMarket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/stock/core/market/StockMarketSingleton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/stock/core/pool/BasicThreadPool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/stock/core/pool/ThreadPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stock/core/StockMarketSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/core/market/BasicStockMarket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stock/exceptions/ErrorMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/exceptions/ErrorMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stock/exceptions/StockMarketAlreadyRunningException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/exceptions/StockMarketAlreadyRunningException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stock/models/Buyer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/models/Buyer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stock/models/Demand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/models/Demand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stock/models/Seller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/models/Seller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stock/models/StockObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/models/StockObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stock/models/StockPerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/models/StockPerson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stock/models/Supply.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/models/Supply.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/StockMarket.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/stock/core/StockMarketSingleton.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/stock/exceptions/ErrorMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/stock/exceptions/ErrorMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/stock/exceptions/StockMarketAlreadyRunningException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/stock/exceptions/StockMarketAlreadyRunningException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/stock/models/Buyer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/stock/models/Buyer$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/stock/models/Buyer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/stock/models/Buyer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/stock/models/Demand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/stock/models/Demand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/stock/models/Seller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/stock/models/Seller$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/stock/models/Seller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/stock/models/Seller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/stock/models/StockObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/stock/models/StockObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/stock/models/StockPerson.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/stock/models/StockPerson.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/stock/models/Supply.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/stock/models/Supply.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/stock/core/StockMarketSingleton.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="72" selection-start-line="14" selection-start-column="72" selection-end-line="14" selection-end-column="72" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1440#1441#0" expanded="true" />
-                <element signature="e#1474#1475#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/stock/exceptions/ErrorMessage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="72" selection-start-line="2" selection-start-column="72" selection-end-line="2" selection-end-column="72" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/stock/exceptions/StockMarketAlreadyRunningException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="72" selection-start-line="3" selection-start-column="72" selection-end-line="3" selection-end-column="72" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/stock/models/Supply.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="72" selection-start-line="3" selection-start-column="72" selection-end-line="3" selection-end-column="72" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/stock/models/Demand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="72" selection-start-line="3" selection-start-column="72" selection-end-line="3" selection-end-column="72" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/stock/models/StockObject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="72" selection-start-line="3" selection-start-column="72" selection-end-line="3" selection-end-column="72" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/stock/models/Seller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="72" selection-start-line="5" selection-start-column="72" selection-end-line="5" selection-end-column="72" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/stock/models/StockPerson.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="9" column="72" selection-start-line="9" selection-start-column="72" selection-end-line="9" selection-end-column="72" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/stock/models/Buyer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="72" selection-start-line="7" selection-start-column="72" selection-end-line="7" selection-end-column="72" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -127,147 +52,15 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>DEMAND_LOCK</find>
-      <find>one supply has</find>
-      <find>onSu</find>
-      <find>onSuply</find>
-      <find>supplies</find>
-      <find>added</find>
-      <find>history</find>
-      <find>getIn</find>
-      <find>removeSupply</find>
-      <find>thread</find>
-      <find>tryTo</find>
-      <find>updateHistory</find>
-      <find>demands</find>
-      <find>Buyer</find>
-      <find>Buyer.</find>
-      <find>seller</find>
-      <find>function</find>
-      <find>syncro</find>
-    </findStrings>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/main/java/StockMarketSingletone.java" />
-        <option value="$PROJECT_DIR$/src/main/java/models/Buyer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/exceptions/StockMarketAlreadyRunningException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/exceptions/ErrorMessage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/EntityImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/EntityRunnable.java" />
-        <option value="$PROJECT_DIR$/src/main/java/models/Demand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/models/Supply.java" />
-        <option value="$PROJECT_DIR$/src/main/java/utils/HistoryHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Buyer.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/Entity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Demand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Supply.java" />
-        <option value="$PROJECT_DIR$/src/main/java/StockMarketSingleton.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Seller.java" />
-        <option value="$PROJECT_DIR$/src/main/java/src/Seller.java" />
-        <option value="$PROJECT_DIR$/src/main/java/src/models/Entity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/src/Supply.java" />
-        <option value="$PROJECT_DIR$/src/main/java/src/models/Buyer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/src/models/Seller.java" />
-        <option value="$PROJECT_DIR$/src/main/java/src/core/StockMarketSingleton.java" />
-        <option value="$PROJECT_DIR$/src/main/java/stock/models/Entity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/stock/models/Supply.java" />
-        <option value="$PROJECT_DIR$/src/main/java/stock/models/StockPerson.java" />
-        <option value="$PROJECT_DIR$/src/main/java/stock/models/StockObject.java" />
-        <option value="$PROJECT_DIR$/src/main/java/stock/models/Seller.java" />
-        <option value="$PROJECT_DIR$/src/main/java/stock/models/Demand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/stock/models/Buyer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/stock/exceptions/StockMarketAlreadyRunningException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/stock/exceptions/ErrorMessage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/stock/core/StockMarketSingleton.java" />
-        <option value="$PROJECT_DIR$/src/main/java/App.java" />
-      </list>
-    </option>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="85" />
-    <option name="y" value="-10" />
-    <option name="width" value="1840" />
-    <option name="height" value="1100" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="StockMarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StockMarket" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StockMarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StockMarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StockMarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StockMarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StockMarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StockMarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StockMarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StockMarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="stock" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StockMarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StockMarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="stock" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StockMarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StockMarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="stock" type="462c0819:PsiDirectoryNode" />
-              <item name="exceptions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StockMarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StockMarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="stock" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-    </panes>
-  </component>
+  <component name="ProjectId" id="1TszuyEC7Oovg52Tofc6w4R2YCs" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1574191065821" />
@@ -336,220 +129,23 @@
       <workItem from="1574187607517" duration="1630000" />
       <workItem from="1574190351342" duration="2172000" />
       <workItem from="1574250416875" duration="2392000" />
+      <workItem from="1574263823600" duration="8942000" />
     </task>
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33091000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="71" y="-7" width="1472" height="878" extended-state="6" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2868272" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32917964" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.04021448" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.33333334" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.76675606" />
-      <window_info anchor="bottom" id="Inspection Results" order="13" visible="true" weight="0.04021448" />
-      <window_info anchor="bottom" id="Duplicates" order="14" visible="true" weight="0.04021448" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="right" id="Maven" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Database" order="8" />
-    </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.32917964" />
-      <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Find" order="2" />
-      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.32917964" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="right" id="Maven" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Database" order="8" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/StockMarketSingletone.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/nio/charset/StandardCharsets.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="51" column="40" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/sql/Timestamp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="144" column="16" selection-start-line="144" selection-start-column="16" selection-end-line="144" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/EntityImpl.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/EntityRunnable.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/utils/HistoryHelper.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Runnable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="67" column="31" selection-start-line="67" selection-start-column="3" selection-end-line="67" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13804">
-          <caret line="858" selection-start-line="858" selection-end-line="858" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="260" column="12" selection-start-line="260" selection-start-column="12" selection-end-line="260" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/HashMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="137" column="13" selection-start-line="137" selection-start-column="13" selection-end-line="137" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/stock/models/Supply.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="72" selection-start-line="3" selection-start-column="72" selection-end-line="3" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/stock/models/StockPerson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="9" column="72" selection-start-line="9" selection-start-column="72" selection-end-line="9" selection-end-column="72" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/stock/models/StockObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="72" selection-start-line="3" selection-start-column="72" selection-end-line="3" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/stock/models/Seller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="72" selection-start-line="5" selection-start-column="72" selection-end-line="5" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/stock/models/Demand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="72" selection-start-line="3" selection-start-column="72" selection-end-line="3" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/stock/models/Buyer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="72" selection-start-line="7" selection-start-column="72" selection-end-line="7" selection-end-column="72" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/stock/exceptions/StockMarketAlreadyRunningException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="72" selection-start-line="3" selection-start-column="72" selection-end-line="3" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/stock/exceptions/ErrorMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="72" selection-start-line="2" selection-start-column="72" selection-end-line="2" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/stock/core/StockMarketSingleton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="72" selection-start-line="14" selection-start-column="72" selection-end-line="14" selection-end-column="72" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1440#1441#0" expanded="true" />
-            <element signature="e#1474#1475#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="masterDetails">
     <states>

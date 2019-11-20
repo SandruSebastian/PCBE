@@ -4,7 +4,7 @@ package stock.models;
  * Abstract StockPerson Class Seller, Buyer
  *
  * @author Sebastian Sandru, Daniel Incicau, Stefan Oproiu, Paul Iusztin
- * @version 0.0.3
+ * @version 0.0.4
  * @since 11.19.2019
  */
 
