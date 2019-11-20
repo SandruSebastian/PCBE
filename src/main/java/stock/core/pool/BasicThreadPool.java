@@ -42,28 +42,66 @@ public class BasicThreadPool implements ThreadPool {
     }
 
     /**
+     * Restarts the thread pool
+     */
+    public void restart() {
+        for (int i = 0; i < threadsCount; i++) {
+            if(!threads[i].isRunning) {
+                threads[i].setRunning(true);
+                threads[i].start();
+            }
+        }
+    }
+
+    /**
+     * Shuts down the thread pool
+     */
+    public void shutdown() {
+        for (int i = 0; i < threadsCount; i++) {
+            threads[i].setRunning(false);
+        }
+
+        synchronized (queue) {
+            queue.notifyAll();
+        }
+    }
+
+
+    /**
      * Wrapper class for {@link Thread} that defines a worker for this pool
      */
     private class PoolWorker extends Thread {
 
         private int number;
 
+        private boolean isRunning;
+
         PoolWorker(int number) {
             this.number = number;
+            this.isRunning = true;
+        }
+
+        public void setRunning(boolean running) {
+            this.isRunning = running;
         }
 
         public void run() {
             Runnable task;
 
-            while(true) {
+            while(this.isRunning) {
                 synchronized (queue) {
-                    while(queue.isEmpty()) {
+                    while(queue.isEmpty() && isRunning) {
                         try {
                             queue.wait();
                         } catch (InterruptedException e) {
                             System.out.println("An error occurred while queue is waiting: " + e.getMessage());
                         }
                     }
+
+                    if(!isRunning) {
+                        return;
+                    }
+
                     task = queue.poll();
                 }
 

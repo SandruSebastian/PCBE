@@ -2,6 +2,7 @@ package stock.core.market;
 
 import com.sun.istack.internal.NotNull;
 import stock.exceptions.StockMarketAlreadyRunningException;
+import stock.exceptions.StockMarketAlreadyStoppedException;
 import stock.models.Demand;
 import stock.models.Supply;
 
@@ -17,6 +18,12 @@ public interface StockMarket {
      * @throws StockMarketAlreadyRunningException if the stock market is already running
      */
     StockMarket run() throws StockMarketAlreadyRunningException;
+
+    /**
+     * @return the instance of the StockMarket
+     * @throws StockMarketAlreadyStoppedException if the stock market is already stopped
+     */
+    StockMarket stop() throws StockMarketAlreadyStoppedException;
 
     /**
      * @param supply to be added to the stock market

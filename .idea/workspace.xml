@@ -2,37 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b58a72f-e562-41d8-8554-e2671d09b831" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/stock/core/market/BasicStockMarketBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/stock/core/market/StockMarket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/stock/core/market/StockMarketSingleton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/stock/core/pool/BasicThreadPool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/stock/core/pool/ThreadPool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/stock/core/StockMarketSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/core/market/BasicStockMarket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/stock/exceptions/ErrorMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/exceptions/ErrorMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/stock/exceptions/StockMarketAlreadyRunningException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/exceptions/StockMarketAlreadyRunningException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/stock/models/Buyer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/models/Buyer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/stock/models/Demand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/models/Demand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/stock/models/Seller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/models/Seller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/stock/models/StockObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/models/StockObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/stock/models/StockPerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/models/StockPerson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/stock/models/Supply.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/models/Supply.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/StockMarket.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stock/core/StockMarketSingleton.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stock/exceptions/ErrorMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/stock/exceptions/ErrorMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stock/exceptions/StockMarketAlreadyRunningException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/stock/exceptions/StockMarketAlreadyRunningException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stock/models/Buyer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/stock/models/Buyer$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stock/models/Buyer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/stock/models/Buyer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stock/models/Demand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/stock/models/Demand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stock/models/Seller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/stock/models/Seller$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stock/models/Seller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/stock/models/Seller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stock/models/StockObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/stock/models/StockObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stock/models/StockPerson.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/stock/models/StockPerson.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/stock/models/Supply.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/stock/models/Supply.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stock/core/pool/BasicThreadPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stock/core/pool/BasicThreadPool.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,11 +48,14 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\sandr\Documents\StockMarket\src\main\java\models" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="stock.exceptions" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -129,7 +103,7 @@
       <workItem from="1574187607517" duration="1630000" />
       <workItem from="1574190351342" duration="2172000" />
       <workItem from="1574250416875" duration="2392000" />
-      <workItem from="1574263823600" duration="8942000" />
+      <workItem from="1574263823600" duration="14617000" />
     </task>
     <servers />
   </component>

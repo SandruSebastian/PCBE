@@ -1,6 +1,6 @@
 import stock.core.market.StockMarket;
 import stock.core.market.StockMarketSingleton;
-import stock.exceptions.StockMarketAlreadyRunningException;
+import stock.exceptions.StockMarketException;
 import stock.models.Buyer;
 import stock.models.Demand;
 import stock.models.Seller;
@@ -58,10 +58,15 @@ public final class App {
         try {
             stockMarket.run();
             bootstrapApp(2000, 2000, stockMarket);
-        } catch (StockMarketAlreadyRunningException e) {
+
+            Thread.sleep(1000);
+            stockMarket.stop();
+
+        } catch (StockMarketException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
     }
 
     /**
