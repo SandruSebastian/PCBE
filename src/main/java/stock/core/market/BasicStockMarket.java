@@ -3,6 +3,7 @@ package stock.core.market;
 import com.sun.istack.internal.NotNull;
 import stock.core.pool.ThreadPool;
 import stock.exceptions.StockMarketAlreadyRunningException;
+import stock.exceptions.StockMarketAlreadyStoppedException;
 import stock.models.Demand;
 import stock.models.Supply;
 
@@ -95,16 +96,32 @@ public class BasicStockMarket implements StockMarket {
     }
 
     /**
-     * Simulates the running server func
+     * Simulates the running server functionality
      *
      * @return StockMarket instance
      * @throws StockMarketAlreadyRunningException threw If it's already running
      */
     public StockMarket run() throws StockMarketAlreadyRunningException {
-        if (isRunning) {
+        if (this.isRunning) {
             throw new StockMarketAlreadyRunningException("The StockMarket is already running");
         }
-        isRunning = true;
+        this.isRunning = true;
+        this.threadPool.restart();
+        return this;
+    }
+
+    /**
+     * Simulates stopping the server functionality
+     *
+     * @return StockMarket instance
+     * @throws StockMarketAlreadyStoppedException threw If it's already running
+     */
+    public StockMarket stop() throws StockMarketAlreadyStoppedException {
+        if (!this.isRunning) {
+            throw new StockMarketAlreadyStoppedException("The StockMarket is already stopped");
+        }
+        this.isRunning = false;
+        this.threadPool.shutdown();
         return this;
     }
 
@@ -196,25 +213,24 @@ public class BasicStockMarket implements StockMarket {
         int timesTriedToBuy = 0;
 
         for (;;) {
-//            synchronized (this) {
-//
-//            }
-            for (int i = 0; i < this.supplies.size() && this.supplies.get(i) != null; i++) {
-                Supply supply = this.supplies.get(i);
-                tryToBuy(demand, supply);
+//            synchronized (SUPPLY_LOCK) {
+                for (int i = 0; i < this.supplies.size() && this.supplies.get(i) != null; i++) {
+                    Supply supply = this.supplies.get(i);
+                    tryToBuy(demand, supply);
 
-                if (supply.getCount() == 0) {
-                    removeSupply(supply);
+                    if (supply.getCount() == 0) {
+                        removeSupply(supply);
+                    }
+
+                    if (demand.getCount() == 0) {
+                        removeDemand(demand);
+                        return;
+                    }
                 }
-
-                if (demand.getCount() == 0) {
-                    removeDemand(demand);
+                if (timesTriedToBuy++ == 2000) {
                     return;
                 }
-            }
-            if (timesTriedToBuy++ == 2000) {
-                return;
-            }
+//            }
         }
     }
 

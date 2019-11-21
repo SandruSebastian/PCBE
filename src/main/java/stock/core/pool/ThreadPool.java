@@ -12,4 +12,14 @@ public interface ThreadPool {
      */
     void execute(Runnable task);
 
+    /**
+     * Restarts the thread pool
+     */
+    void restart();
+
+    /**
+     * Shuts down the thread pool
+     */
+    void shutdown();
+
 }

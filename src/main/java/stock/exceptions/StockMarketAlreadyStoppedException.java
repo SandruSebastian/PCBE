@@ -8,8 +8,8 @@ package stock.exceptions;
  * @since 11.19.2019
  */
 
-public class StockMarketAlreadyRunningException extends StockMarketException {
-    public StockMarketAlreadyRunningException(String errorMessage) {
+public class StockMarketAlreadyStoppedException extends StockMarketException {
+    public StockMarketAlreadyStoppedException(String errorMessage) {
         super(errorMessage);
     }
 }

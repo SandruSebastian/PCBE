@@ -14,10 +14,12 @@ public class BasicStockMarketBuilder {
 
     private BasicStockMarket stockMarket;
 
+    private ThreadPool defaultThreadPool = new BasicThreadPool(5);
+
     BasicStockMarketBuilder() {
         this.stockMarket = new BasicStockMarket();
         this.stockMarket.setEnabledLogger(true);
-        this.stockMarket.setThreadPool(getDefaultThreadPool());
+        this.stockMarket.setThreadPool(defaultThreadPool);
     }
 
     /**
@@ -34,6 +36,7 @@ public class BasicStockMarketBuilder {
      * @return this instance
      */
     BasicStockMarketBuilder setThreadPool(ThreadPool threadPool) {
+        this.defaultThreadPool.shutdown();
         this.stockMarket.setThreadPool(threadPool);
         return this;
     }
@@ -43,10 +46,6 @@ public class BasicStockMarketBuilder {
      */
     BasicStockMarket build() {
         return this.stockMarket;
-    }
-
-    private ThreadPool getDefaultThreadPool() {
-        return new BasicThreadPool(5);
     }
 
 }
